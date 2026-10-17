@@ -456,21 +456,30 @@
 </footer>
 
 <!-- Source Code Section -->
+
+<!-- Source Code Section -->
 <section id="source-code">
     <div class="container">
-        <h2 class="section-title text-center">Website Source Code</h2>
+        <h2 class="section-title text-center">Complete Website Source Code</h2>
         <p>
-            The main page uses the HTML structure and inline CSS shown
-            in this file. The source-code display below is a guide;
-            replace this text with the escaped source of the complete
-            file before submitting your assignment.
+            The complete HTML source code of this webpage is displayed below.
         </p>
-        <pre class="source-code"><code>&lt;!-- UET Mardan Student Activities Portal --&gt;
-&lt;!-- Main sections: Navbar, Hero, About, Events,
-     Schedule, Registration, Contact and Footer --&gt;
-&lt;!-- See the complete index.html source above. --&gt;</code></pre>
+        <pre class="source-code"><code id="full-source">Loading source code...</code></pre>
     </div>
 </section>
+
+<script>
+fetch(window.location.href)
+    .then(response => response.text())
+    .then(html => {
+        document.getElementById("full-source").textContent = html;
+    })
+    .catch(() => {
+        document.getElementById("full-source").textContent =
+            "Unable to load source code.";
+    });
+</script>
+    
 
 <!-- Bootstrap JS is needed for the mobile navbar toggle -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
